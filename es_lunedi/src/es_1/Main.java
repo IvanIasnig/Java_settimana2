@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 public class Main {
 	private static Logger logger = LoggerFactory.getLogger(Main.class);
 	   public static void main(String[] args) {
-	        Random rand = new Random();
+	        Random random = new Random();
 	        Scanner scanner = new Scanner(System.in);
 
 	        int[] array = new int[5];
 	        for (int i = 0; i < array.length; i++) {
-	            array[i] = 1 + rand.nextInt(10);
+	            array[i] = 1 + random.nextInt(10);
 	        }
 
 	        stampaArray(array);

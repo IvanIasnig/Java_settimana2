@@ -4,12 +4,22 @@ import java.util.Random;
 
 public class ThreadMain {
 	public static void main(String[] args) {
+		
 	int[] array = new int[3000];
+	
 	Random rand = new Random();
 		
 	for (int i=0; i<3000; i++) {
 		array[i]= rand.nextInt(11);
 		}
+	
+	int somma = 0;
+	for (int k=0; k<array.length; k++) {
+		somma = somma + array[k];
+		}
+	
+	System.out.println(somma);
+	
 	
 	ThreadMio arr1 = new ThreadMio(array,0,1000);
 	ThreadMio arr2 = new ThreadMio(array,1000,2000);

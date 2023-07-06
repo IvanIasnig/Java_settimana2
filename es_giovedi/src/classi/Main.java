@@ -27,16 +27,16 @@ public class Main {
         products.add(new Product(9L, "Toy 3", "Girls", 65.3));
         products.add(new Product(10L, "Electronics 2", "Baby", 250.0));
         
-        orders.add(new Order(121,"Completed", LocalDate.of(2021, 2, 1), LocalDate.of(2021, 2, 5), Arrays.asList(products.get(0), products.get(1)), Mario));
-        orders.add(new Order(122,"Completed", LocalDate.of(2021, 2, 2), LocalDate.of(2021, 2, 6), Arrays.asList(products.get(2), products.get(3)), Luigi));
-        orders.add(new Order(123,"In Progress", LocalDate.of(2021, 2, 3), LocalDate.of(2021, 2, 7), Arrays.asList(products.get(4), products.get(5)), Mario));
-        orders.add(new Order(124,"In Progress", LocalDate.of(2021, 2, 4), LocalDate.of(2021, 2, 8), Arrays.asList(products.get(6), products.get(7)), Luigi));
-        orders.add(new Order(125,"Completed", LocalDate.of(2021, 2, 5), LocalDate.of(2021, 2, 9), Arrays.asList(products.get(8), products.get(9)), Mario));
-        orders.add(new Order(126,"Completed", LocalDate.of(2021, 3, 1), LocalDate.of(2021, 3, 5), Arrays.asList(products.get(1), products.get(2)), Luigi));
-        orders.add(new Order(127,"In Progress", LocalDate.of(2021, 3, 2), LocalDate.of(2021, 3, 6), Arrays.asList(products.get(3), products.get(4)), Mario));
-        orders.add(new Order(128,"In Progress", LocalDate.of(2021, 3, 3), LocalDate.of(2021, 3, 7), Arrays.asList(products.get(5), products.get(6)), Luigi));
-        orders.add(new Order(129,"Completed", LocalDate.of(2021, 3, 4), LocalDate.of(2021, 3, 8), Arrays.asList(products.get(7), products.get(8)), Mario));
-        orders.add(new Order(120,"Completed", LocalDate.of(2021, 3, 5), LocalDate.of(2021, 3, 9), Arrays.asList(products.get(9), products.get(0)), Luigi));
+        orders.add(new Order(121,"Completed", LocalDate.of(2023, 2, 1), LocalDate.of(2023, 2, 5), Arrays.asList(products.get(0), products.get(1)), Mario));
+        orders.add(new Order(122,"Completed", LocalDate.of(2023, 2, 2), LocalDate.of(2023, 2, 6), Arrays.asList(products.get(2), products.get(3)), Luigi));
+        orders.add(new Order(123,"In Progress", LocalDate.of(2023, 2, 3), LocalDate.of(2023, 2, 7), Arrays.asList(products.get(4), products.get(5)), Mario));
+        orders.add(new Order(124,"In Progress", LocalDate.of(2023, 2, 4), LocalDate.of(2023, 2, 8), Arrays.asList(products.get(6), products.get(7)), Luigi));
+        orders.add(new Order(125,"Completed", LocalDate.of(2023, 2, 5), LocalDate.of(2023, 2, 9), Arrays.asList(products.get(8), products.get(9)), Mario));
+        orders.add(new Order(126,"Completed", LocalDate.of(2023, 3, 1), LocalDate.of(2023, 3, 5), Arrays.asList(products.get(1), products.get(2)), Luigi));
+        orders.add(new Order(127,"In Progress", LocalDate.of(2023, 3, 2), LocalDate.of(2023, 3, 6), Arrays.asList(products.get(3), products.get(4)), Mario));
+        orders.add(new Order(128,"In Progress", LocalDate.of(2023, 3, 3), LocalDate.of(2023, 3, 7), Arrays.asList(products.get(5), products.get(6)), Luigi));
+        orders.add(new Order(129,"Completed", LocalDate.of(2023, 3, 4), LocalDate.of(2023, 3, 8), Arrays.asList(products.get(7), products.get(8)), Mario));
+        orders.add(new Order(120,"Completed", LocalDate.of(2023, 3, 5), LocalDate.of(2023, 3, 9), Arrays.asList(products.get(9), products.get(0)), Luigi));
         
         
         List<Product> booksOver100 = products.stream()
@@ -55,8 +55,8 @@ public class Main {
         
         List<Product> orderFebApr = orders.stream()
         	    .filter(order -> order.getCustomer().getTier() == 2 &&
-        	                     order.getOrderDate().isAfter(LocalDate.of(2021, 2, 1)) &&
-        	                     order.getOrderDate().isBefore(LocalDate.of(2021, 4, 1)))
+        	                     order.getOrderDate().isAfter(LocalDate.of(2023, 1, 31)) &&
+        	                     order.getOrderDate().isBefore(LocalDate.of(2023, 4, 2)))
         	    .flatMap(order -> order.getProducts().stream())
         	    .toList();
         

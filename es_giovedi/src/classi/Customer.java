@@ -8,7 +8,6 @@ public class Customer {
     private String name;
     private Integer tier;
 
-    // Costruttori, getter, setter, metodi equals(), hashCode() e toString()
     public Customer (Integer id, String name, Integer tier) {
     	this.id = id;
     	this.name = name;

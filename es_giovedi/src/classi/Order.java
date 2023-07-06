@@ -4,27 +4,28 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Order {
-    private Long id;
+    private Integer id;
     private String status;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> products;
     private Customer customer;
 
-    // Costruttori, getter, setter, metodi equals(), hashCode() e toString()
-    public Order (Long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer ) {
+    // Costruttori, getter, setter, toString()
+    public Order (Integer id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer ) {
     	this.id = id;
     	this.status = status;
     	this.orderDate = orderDate;
     	this.deliveryDate = deliveryDate;
     	this.customer = customer;
+    	this.products = products;
     }
     
-    public void setId(Long id) {
+    public void setId(Integer id) {
     	this.id = id;
     }
     
-    public Long getId() {
+    public Integer getId() {
     	return id;
     }
     
@@ -59,5 +60,12 @@ public class Order {
     public Customer getCustomer () {
     	return customer;
     }
+    
+    @Override
+    public String toString() {
+        return "Order [id=" + id + ", status=" + status + ", orderDate=" + orderDate + ", deliveryDate=" + deliveryDate
+                + ", products=" + products + ", customer=" + customer + "]";
+    }
+
     
 }

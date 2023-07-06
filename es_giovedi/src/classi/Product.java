@@ -6,8 +6,6 @@ public class Product {
     private String category;
     private Double price;
 
-    
-    // Costruttori, getter, setter, metodi equals(), hashCode() e toString()
     public Product (Long id, String name, String category, double price) {
     	
     	this.id = id;

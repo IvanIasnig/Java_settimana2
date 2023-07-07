@@ -1,9 +1,14 @@
 package App;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.apache.commons.io.FileUtils;
 
 public class Main {
 
@@ -31,7 +36,7 @@ public class Main {
 			System.out.println("3. Cerca un libro o una rivista per ISBN");
 			System.out.println("4. Cerca un libro o una rivista per anno di pubblicazione");
 			System.out.println("5. Cerca un libro o una rivista per autore");
-
+			System.out.println("6. Salva catalogo");
 
 			scelta = scanner.nextInt();
 
@@ -146,6 +151,27 @@ public class Main {
 						System.out.println("Nessun libro dell'autore '" + autCercare + "' trovat0.");
 					}
 					break;
+					
+				case 6:
+					//Salva su disco
+					String data = "";
+
+		            for(Libri libro : libri) {
+		                data += libro.toString();
+		            }
+
+		            for(Riviste rivista : riviste) {
+		                data += rivista.toString();
+		            }
+
+		            try {
+		                FileUtils.writeStringToFile(new File("archivio.txt"), data, StandardCharsets.UTF_8);
+		                System.out.println("Dati salvati");
+		            } catch (IOException e) {
+		                System.out.println("Errore nel salvataccio");
+		                e.printStackTrace();
+		            }
+		            break;
 
 				case 0:
 					
@@ -155,7 +181,7 @@ public class Main {
 					System.out.println("Scelta non valida!");
 					break;
 			}
-		} while (scelta != 5);
+		} while (scelta != 0);
 
 		scanner.close();
 	}

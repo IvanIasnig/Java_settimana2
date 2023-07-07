@@ -6,5 +6,15 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.13.0 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/ivan1/.m2/repository/commons-io/commons-io/2.13.0/commons-io-2.13.0.jar" sourcepath="C:/Users/ivan1/.m2/repository/commons-io/commons-io/2.13.0/commons-io-2.13.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="commons-io"/>
+			<attribute name="maven.artifactId" value="commons-io"/>
+			<attribute name="maven.version" value="2.13.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

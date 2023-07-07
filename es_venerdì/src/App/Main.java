@@ -21,7 +21,7 @@ public class Main {
 		riviste.add(new Riviste(1003, "Ciao", 2002, 3000, Riviste.Periodicita.SEMESTRALE));
 
 		Scanner scanner = new Scanner(System.in);
-		int choice;
+		int scelta;
 
 		do {
 			System.out.println("Scegli un'opzione: ");
@@ -30,11 +30,12 @@ public class Main {
 			System.out.println("2. Rimuovi un libro o una rivista per ISBN");
 			System.out.println("3. Cerca un libro o una rivista per ISBN");
 			System.out.println("4. Cerca un libro o una rivista per anno di pubblicazione");
+			System.out.println("5. Cerca un libro o una rivista per autore");
 
 
-			choice = scanner.nextInt();
+			scelta = scanner.nextInt();
 
-			switch (choice) {
+			switch (scelta) {
 				case 1:
 					// Aggiugni libro
 					System.out.println("Inserisci i dettagli del nuovo libro: ");
@@ -104,7 +105,7 @@ public class Main {
 					break;
 					
 				case 4:
-					// Rierca per ann
+					// Rierca per anno
 					System.out.println("Inserisci l'anno di pubblicazione del libro o rivista da cercare: ");
 					int annoCercare = scanner.nextInt();
 
@@ -128,16 +129,33 @@ public class Main {
 						System.out.println("Nessun libro o rivista con l'anno di pubblicazione " + annoCercare + " trovato.");
 					}
 					break;
+					
+				case 5:
+					// Rierca per autore
+					System.out.println("Inserisci l'autore del libro o della rivista da cercare: ");
+					scanner.nextLine();
+					String autCercare = scanner.nextLine();
+
+					Set<Libri> libriAut = libri.stream()
+							.filter(libro -> libro.getAutore().equals(autCercare))
+							.collect(Collectors.toSet());
+
+					if(!libriAut.isEmpty()) {
+						System.out.println("Libri trovati dell'autore: " + autCercare +": " + libriAut);
+					} else if(libriAut.isEmpty()) {
+						System.out.println("Nessun libro dell'autore '" + autCercare + "' trovat0.");
+					}
+					break;
 
 				case 0:
 					
 					break;
 
 				default:
-					System.out.println("Scelta non valida, per favore riprova.");
+					System.out.println("Scelta non valida!");
 					break;
 			}
-		} while (choice != 4);
+		} while (scelta != 5);
 
 		scanner.close();
 	}
